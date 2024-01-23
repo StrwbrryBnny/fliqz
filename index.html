@@ -1,1 +1,43 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .word {
+      display: inline-block;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .enlarged {
+      font-size: 1.5em;
+    }
+  </style>
+  <title>Word Enlarger</title>
+</head>
+<body>
+
+<div id="wordContainer">
+  <span class="word" onclick="enlargeWord(this)">Word1</span>
+  <span class="word" onclick="enlargeWord(this)">Word2</span>
+  <span class="word" onclick="enlargeWord(this)">Word3</span>
+  <span class="word" onclick="enlargeWord(this)">Word4</span>
+  <span class="word" onclick="enlargeWord(this)">Word5</span>
+</div>
+
+<script>
+  function enlargeWord(element) {
+    // Entferne die Klasse 'enlarged' von allen Wörtern
+    var words = document.getElementsByClassName('word');
+    for (var i = 0; i < words.length; i++) {
+      words[i].classList.remove('enlarged');
+    }
+
+    // Füge die Klasse 'enlarged' nur dem angeklickten Wort hinzu
+    element.classList.add('enlarged');
+  }
+</script>
+
+</body>
+</html>
